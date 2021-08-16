@@ -1,0 +1,687 @@
+@charset "UTF-8";
+/**** RESET CSS ****/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/**** / RESET CSS ****/
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+a {
+  color: #000000;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  box-shadow: 0px -5px 20px 4px rgba(0, 0, 0, 0.15);
+}
+header .return-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 70px;
+  font-size: 18px;
+}
+header .return-btn i {
+  margin-left: 20px;
+}
+header img {
+  width: 200px;
+  height: 30px;
+}
+
+footer {
+  background-color: #353535;
+  color: #FFFFFF;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+}
+footer ul li {
+  margin-top: 5px;
+}
+footer ul li:first-child::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+  font-size: 14px;
+}
+footer ul li:nth-child(2)::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+  font-size: 10px;
+}
+footer ul li a {
+  color: #FFFFFF;
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    text-align: center;
+  }
+}
+.cards {
+  background-color: #f6f6f6;
+}
+.cards ul li {
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 11px 20px -15px rgba(0, 0, 0, 0.3);
+}
+.cards ul li img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.cards ul li:nth-child(2) img {
+  object-position: 0 -150px;
+}
+.cards ul li .card-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px 20px 15px;
+}
+.cards ul li .card-infos p {
+  color: #656565;
+}
+.cards ul li .card-infos i {
+  font-size: 30px;
+}
+.cards ul li .new-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 15px;
+  background-color: #99E2D0;
+  border-radius: 3px;
+  color: #37806e;
+  font-weight: 700;
+}
+
+.card-infos .like {
+  position: relative;
+}
+.card-infos .like i {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  font-size: 30px;
+}
+.card-infos .like i.is-active:hover {
+  font-weight: bold;
+  background: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s linear;
+  animation-fill-mode: both;
+}
+
+@media only screen and (min-width: 768px) {
+  .cards ul li figure {
+    height: 280px;
+  }
+  .cards ul li figure img {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cards ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .cards ul li {
+    display: block;
+    width: calc(50% - 40px / 2);
+    height: 350px;
+  }
+  .cards ul li figure {
+    height: 250px;
+  }
+  .cards ul li figure img {
+    height: 100%;
+  }
+  .cards ul li figure img:nth-child(2) img {
+    object-position: 0;
+  }
+  .cards ul li h3 {
+    font-size: 24px;
+  }
+  .cards ul li p {
+    font-size: 20px;
+  }
+}
+.menu .menu-items {
+  margin-top: 30px;
+}
+.menu .menu-items ul li {
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
+}
+.menu .menu-items ul li:not(.menu-items-title) {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  margin-bottom: 15px;
+  box-shadow: 0px 11px 20px -15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.menu .menu-items ul li.menu-items-title {
+  margin-top: 40px;
+}
+.menu .menu-items ul li.menu-items-title h2 {
+  color: #656565;
+  font-weight: 500;
+  font-size: 16px;
+}
+.menu .menu-items ul li.menu-items-title .separator {
+  width: 40px;
+  height: 3px;
+  margin-bottom: 15px;
+  background-color: #99E2D0;
+}
+.menu .menu-items ul li div.menu-items-infos {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.menu .menu-items ul li h3 {
+  max-width: 310px;
+  font-size: 18px;
+}
+.menu .menu-items ul li div.menu-items-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu .menu-items ul li div.menu-items-price p {
+  width: 80%;
+  color: #656565;
+  font-weight: 400;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu .menu-items ul li div.menu-items-price p,
+.menu .menu-items ul li div.menu-items-price span {
+  display: block;
+}
+.menu .menu-items ul li div.add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+  height: auto;
+  width: 55px;
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  margin-right: -55px;
+  transition: all 0.4s;
+}
+.menu .menu-items ul li div.add-to-cart span {
+  display: inline-block;
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+.menu .menu-items ul li div.add-to-cart span i {
+  color: #99E2D0;
+  font-size: 12px;
+}
+.menu button.order {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-items ul li {
+    cursor: pointer;
+  }
+  .menu-items ul li .menu-items-infos h3 {
+    max-width: 100%;
+  }
+  .menu-items ul li:hover div.add-to-cart {
+    margin-right: 0;
+    transform: translateX(0);
+  }
+  .menu-items ul li:hover div.add-to-cart span {
+    transform: rotate(360deg);
+    transition: transform 1s;
+  }
+}
+.menu-items ul li:nth-child(1) {
+  animation-delay: 0.25s;
+}
+
+.menu-items ul li:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.menu-items ul li:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+.menu-items ul li:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.menu-items ul li:nth-child(5) {
+  animation-delay: 1.25s;
+}
+
+.menu-items ul li:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.menu-items ul li:nth-child(7) {
+  animation-delay: 1.75s;
+}
+
+.menu-items ul li:nth-child(8) {
+  animation-delay: 2s;
+}
+
+.menu-items ul li:nth-child(9) {
+  animation-delay: 2.25s;
+}
+
+.menu-items ul li:nth-child(10) {
+  animation-delay: 2.5s;
+}
+
+.menu-items ul li:nth-child(11) {
+  animation-delay: 2.75s;
+}
+
+.menu-items ul li:nth-child(12) {
+  animation-delay: 3s;
+}
+
+.menu-items ul li:nth-child(13) {
+  animation-delay: 3.25s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader .overlay {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(35, 35, 35, 0.7);
+  animation: closeOverlay linear forwards;
+  animation-duration: 2s;
+  z-index: 30;
+}
+.loader .loading-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin linear forwards;
+  animation-duration: 2s;
+  margin-top: 100px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 5px solid #FF79DA;
+    opacity: 1;
+  }
+  99% {
+    transform: rotate(360deg);
+    border-top: 5px solid #9356DC;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes closeOverlay {
+  0% {
+    width: 100%;
+  }
+  99% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+.container {
+  padding: 30px 20px;
+}
+
+.search-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #eaeaea;
+}
+.search-location::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+}
+.search-location input {
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+}
+.search-location input::placeholder {
+  color: black;
+}
+
+.introduction {
+  padding: 40px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.introduction h1 {
+  margin-bottom: 20px;
+}
+.introduction p {
+  margin-bottom: 25px;
+  color: #656565;
+}
+.introduction button {
+  display: block;
+  margin: auto;
+  padding: 15px 20px;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
+  box-shadow: 0px 11px 20px -10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.introduction button:hover {
+  box-shadow: 0px 6px 15px -5px rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.steps ul li {
+  position: relative;
+  padding: 25px;
+  margin: 0 0 25px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 11px 20px -15px rgba(0, 0, 0, 0.3);
+  background-color: #f6f6f6;
+}
+.steps ul li:first-child::before {
+  content: "1";
+  position: absolute;
+  top: 30%;
+  left: -15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  text-align: center;
+  color: #FFFFFF;
+}
+.steps ul li:nth-child(2)::before {
+  content: "2";
+  position: absolute;
+  top: 30%;
+  left: -15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  text-align: center;
+  color: #FFFFFF;
+}
+.steps ul li:nth-child(3)::before {
+  content: "3";
+  position: absolute;
+  top: 30%;
+  left: -15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  text-align: center;
+  color: #FFFFFF;
+}
+.steps ul li .choose-restaurant::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+  color: #7e7e7e;
+}
+.steps ul li .compose-menu::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+  color: #7e7e7e;
+}
+.steps ul li .eat-restaurant::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 15px;
+  color: #7e7e7e;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 70%;
+    margin: auto;
+  }
+
+  .steps ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .steps ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    margin-right: 30px;
+    padding: 10px;
+    height: 60px;
+    width: 270px;
+  }
+  .steps ul li a {
+    font-size: 18px;
+  }
+}
+.menu-img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu {
+  position: relative;
+  top: -45px;
+  margin-bottom: -45px;
+  background-color: #f6f6f6;
+  border-radius: 30px 30px 0 0;
+  z-index: 5;
+}
+.menu button {
+  display: block;
+  margin: auto;
+  padding: 15px 20px;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
+  box-shadow: 0px 11px 20px -10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 15px 40px;
+  margin-top: 35px;
+}
+.menu button:hover {
+  box-shadow: 0px 6px 15px -5px rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-header h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 25px;
+}
+.menu-header .like {
+  position: relative;
+}
+.menu-header .like i {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  font-size: 30px;
+}
+.menu-header .like i.is-active:hover {
+  font-weight: bold;
+  background: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s linear;
+  animation-fill-mode: both;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu-img {
+    height: 400px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
